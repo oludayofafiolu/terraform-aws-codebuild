@@ -126,14 +126,14 @@ variable "secondary_sources" {
 }
 
 variable "build_batch_config" {
-  type = list(object(
+  type = object(
     {
       combine_artifacts       = bool
       service_role            = string
       timeout_in_mins         = string
       compute_types_allowed   = list(string)
       maximum_builds_allowed  = number
-  }))
+  })
   default     = {}
   description = "(Optional) batch config for batch build specs"
 }
