@@ -129,7 +129,6 @@ variable "build_batch_config" {
   type = object(
     {
       combine_artifacts       = bool
-      service_role            = string
       timeout_in_mins         = string
       compute_types_allowed   = list(string)
       maximum_builds_allowed  = number
