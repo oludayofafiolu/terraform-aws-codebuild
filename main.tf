@@ -441,7 +441,7 @@ resource "aws_codebuild_project" "default" {
       combine_artifacts = build_batch_config.value.combine_artifacts != null || "" ? build_batch_config.value.combine_artifacts : "false" 
       service_role      = join("", aws_iam_role.default.*.arn)
       timeout_in_mins   = build_batch_config.value.timeout_in_mins != null || "" ? build_batch_config.value.timeout_in_mins : "480"
-      restrictions  {
+      restrictions {
         compute_types_allowed  = build_batch_config.value.compute_types_allowed
         maximum_builds_allowed = build_batch_config.value.maximum_builds_allowed != null || "" ? build_batch_config.value.maximum_builds_allowed : "100" 
       }

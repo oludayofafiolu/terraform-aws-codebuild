@@ -125,6 +125,19 @@ variable "secondary_sources" {
   description = "(Optional) secondary source for the codebuild project in addition to the primary location"
 }
 
+variable "build_batch_config" {
+  type = list(object(
+    {
+      combine_artifacts       = bool
+      service_role            = string
+      timeout_in_mins         = string
+      compute_types_allowed   = list(string)
+      maximum_builds_allowed  = number
+  }))
+  default     = {}
+  description = "(Optional) batch config for batch build specs"
+}
+
 variable "source_type" {
   type        = string
   default     = "CODEPIPELINE"
