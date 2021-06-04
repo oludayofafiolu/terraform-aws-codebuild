@@ -436,7 +436,7 @@ resource "aws_codebuild_project" "default" {
   }
 
   dynamic "build_batch_config" {
-    for_each = var.build_batch_config
+    for_each = var.build_batch_configs
     content {
       combine_artifacts = build_batch_config.value.combine_artifacts == null ? build_batch_config.value.combine_artifacts : false
       service_role      = join("", aws_iam_role.default.*.arn)

@@ -125,7 +125,7 @@ variable "secondary_sources" {
   description = "(Optional) secondary source for the codebuild project in addition to the primary location"
 }
 
-variable "build_batch_config" {
+variable "build_batch_configs" {
   type = object(
     {
       combine_artifacts       = bool
