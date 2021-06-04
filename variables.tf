@@ -128,10 +128,10 @@ variable "secondary_sources" {
 variable "build_batch_configs" {
   type = object(
     {
-      combine_artifacts       = bool
-      timeout_in_mins         = string
+      combine_artifacts       = optional(bool)
+      timeout_in_mins         = optional(number)
       compute_types_allowed   = list(string)
-      maximum_builds_allowed  = number
+      maximum_builds_allowed  = optional(number)
   })
   default     = {}
   description = "(Optional) batch config for batch build specs"
