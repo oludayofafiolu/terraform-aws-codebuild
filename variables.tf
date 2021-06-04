@@ -134,7 +134,7 @@ variable "build_batch_config" {
       compute_types_allowed   = list(string)
       maximum_builds_allowed  = number
   })
-  default     = {}
+  default     = null
   description = "(Optional) batch config for batch build specs"
 }
 
